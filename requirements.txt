@@ -1,7 +1,3 @@
 flask
 gunicorn
-<<<<<<< HEAD
 google-generativeai
-=======
-google-generativeai
->>>>>>> 6011664d7667703fa63d1942984d21e0f1294a64
