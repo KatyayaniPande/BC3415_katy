@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lama Robo Advisor</title>
+    <title>Singapore Joke</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,13 +16,10 @@
             height: 100vh;
             flex-direction: column;
         }
-        h2 {
+        h2, p {
             color: #333;
         }
-        form {
-            margin: 10px 0;
-        }
-        input[type="submit"], button {
+        button {
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
@@ -31,16 +28,14 @@
             cursor: pointer;
             font-size: 16px;
         }
-        input[type="submit"]:hover, button:hover {
+        button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <h2>Welcome to Lama Robo Advisor</h2>
-    <form action="/financial_FAQ" method="post">
-        <input type="submit" value="Financial FAQ">
-    </form>
-    <button onclick="window.location.href='/singapore_joke.html'">Singapore Joke</button>
+    <h2>Here's a joke for you!</h2>
+    <p>Why don't Singaporeans play hide and seek? Because good luck hiding in a city where everything is so well-organized!</p>
+    <button onclick="window.location.href='/index.html'">Back to Home</button>
 </body>
 </html>
