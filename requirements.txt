@@ -3,5 +3,4 @@ gunicorn
 google-generativeai
 textblob
 transformers
-tensorflow>=2.0.0
-tf-keras==2.11.0  # The tf-keras version compatible with the TensorFlow version
+tensorflow==2.17.0  # This includes tf.keras
