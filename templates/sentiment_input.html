@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Input</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Enter Text for Sentiment Analysis</h1>
+        
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        <form method="POST" action="/sentiment_analysis">
+            <div class="form-group">
+                <label for="text">Text:</label>
+                <textarea class="form-control" id="text" name="text" rows="4" placeholder="Enter your text here..."></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Analyze Sentiment</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
