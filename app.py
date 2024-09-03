@@ -4,10 +4,9 @@ from transformers import pipeline  # Importing transformer pipeline for sentimen
 import google.generativeai as palm
 
 
-api = "AIzaSyCVosrP3yeJH5UDzEpzHuprGSdXfkzMBLM"  # Replace with your actual API key
+api = "AIzaSyAairy61urxq7bs4uN79aNd9kHMAj5hPe0"  # Replace with your actual API key
 palm.configure(api_key=api)
-model = {"model": "models/chat-bison-001"}
-
+model = { 'model': "models/text-bison-001"}
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
@@ -25,8 +24,8 @@ def singapore_joke():
 @app.route("/makersuite", methods=["GET", "POST"])
 def makersuite():
     q = request.form.get("q")
-    r = palm.chat(messages=q, **model)
-    return render_template("makersuite.html", r=r.last)
+    r = palm.generate_text(prompt=q, **model)
+    return render_template("makersuite.html", r=r.result)
 
 # New route for sentiment analysis
 @app.route("/sentiment_analysis", methods=["GET", "POST"])
@@ -40,18 +39,12 @@ def sentiment_analysis():
             # Perform sentiment analysis using TextBlob
             textblob_sentiment = TextBlob(user_text).sentiment
             
-            # Perform sentiment analysis using transformers pipeline
-            transformer_model = pipeline("sentiment-analysis")
-            transformer_sentiment = transformer_model(user_text)
-            
             return render_template("sentiment_analysis.html", 
-                                   textblob_sentiment=textblob_sentiment, 
-                                   transformer_sentiment=transformer_sentiment)
+                                   textblob_sentiment=textblob_sentiment)
         except Exception as e:
             return render_template("sentiment_input.html", error=f"An error occurred: {str(e)}")
     
     return render_template("sentiment_input.html")
-
 if __name__ == "__main__":
     app.run(debug=True)
 
