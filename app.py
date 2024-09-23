@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request
 from textblob import TextBlob  # Importing TextBlob for sentiment analysis
 from transformers import pipeline  # Importing transformer pipeline for sentiment analysis
-import google.generativeai as palm
+import google.generativeai as genai
+
 
 
 api = "AIzaSyAairy61urxq7bs4uN79aNd9kHMAj5hPe0"  # Replace with your actual API key
-palm.configure(api_key=api)
-model = { 'model': "models/text-bison-001"}
+genai.configure(api_key=api)
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
@@ -24,9 +27,8 @@ def singapore_joke():
 @app.route("/makersuite", methods=["GET", "POST"])
 def makersuite():
     q = request.form.get("q")
-    r = palm.generate_text(prompt=q, **model)
-    return render_template("makersuite.html", r=r.result)
-
+    r = model.generate_content(q)
+    return(render_template("makersuite.html",r=r.text))
 # New route for sentiment analysis
 @app.route("/sentiment_analysis", methods=["GET", "POST"])
 def sentiment_analysis():

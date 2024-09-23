@@ -1,42 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lama Robo Advisor</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-        h2 {
-            color: #333;
-        }
-        form {
-            margin: 10px 0;
-        }
-        input[type="submit"], button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover, button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
 </head>
 <body>
+    <div class="container">
     <h2>Welcome to Lama Robo Advisor</h2>
     <form action="/financial_FAQ" method="post">
         <input type="submit" value="Financial FAQ">
@@ -50,6 +19,6 @@
         <input type="submit" value="Sentiment Analysis">
     </form>
 
-
+    </div>
 </body>
 </html>
