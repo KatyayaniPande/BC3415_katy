@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    <title>Lama Robo Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Link to Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHq6a1UeYgJbP+0QzKR+uB/B6f1W+TrOxj0XqHsp4HQcF6Rj6K1gUJ+0dL+VnVqL++YpKqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
-    <h2>Welcome to Lama Robo Advisor</h2>
-    <form action="/financial_FAQ" method="post">
-        <input type="submit" value="Financial FAQ">
-    </form>
+        <h2>Welcome to Lama Robo Advisor</h2>
+        <div class="buttons">
+            <form action="/financial_FAQ" method="post">
+                <button type="submit"><i class="fas fa-chart-line"></i> Financial FAQ</button>
+            </form>
 
-    <form action="/singapore_joke" method="post">
-        <input type="submit" value="Singapore joke">
-    </form>
+            <form action="/singapore_joke" method="post">
+                <button type="submit"><i class="fas fa-laugh"></i> Singapore Joke</button>
+            </form>
 
-    <form action="/sentiment_analysis" method="post">
-        <input type="submit" value="Sentiment Analysis">
-    </form>
-
-    </div>
+            <form action="/sentiment_analysis" method="post">
+                <button type="submit"><i class="fas fa-smile"></i> Sentiment Analysis</button>
+            </form>
+        </div>
+           </div>
 </body>
 </html>
