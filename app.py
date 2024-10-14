@@ -47,6 +47,12 @@ def sentiment_analysis():
             return render_template("sentiment_input.html", error=f"An error occurred: {str(e)}")
     
     return render_template("sentiment_input.html")
+
+@app.route("/transfer_money", methods=["GET", "POST"])
+def transfer_money():
+    return render_template("transfer_money.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 

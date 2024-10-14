@@ -69,7 +69,7 @@ button {
     display: inline-block;
     width: 100%;  /* Ensure buttons take full width */
     max-width: 320px; /* Max width for buttons */
-    margin: 0 auto; /* Center buttons */
+    margin: 5px auto; /* Center buttons */
 }
 
 button i {
@@ -86,7 +86,7 @@ button:focus {
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
-input[type="text"], input[type="submit"] {
+input[type="number"], input[type="text"], input[type="submit"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
